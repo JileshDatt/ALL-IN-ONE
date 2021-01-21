@@ -1,0 +1,152 @@
+﻿@model ALL_IN_ONE.Models.Candidate
+
+@{
+    ViewBag.Title = "Candidate Form";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<div class="page-title">
+    <h3 class="breadcrumb-header">CANDIDATE FORM</h3>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="card card-white">
+        @Html.ValidationSummary(true, "", new { @class = "card-body" })
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                @Html.LabelFor(model => model.ca_Fname)
+
+                @Html.EditorFor(model => model.ca_Fname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ca_Fname, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="col-md-6 mb-3">
+                @Html.LabelFor(model => model.ca_Lname)
+
+                @Html.EditorFor(model => model.ca_Lname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ca_Lname, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="col-md-12 mb-3">
+                @Html.LabelFor(model => model.ca_Address)
+
+                @Html.EditorFor(model => model.ca_Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ca_Address, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+
+        <div class="form-row">
+            <div class="col-md-4 mb-2">
+                @Html.LabelFor(model => model.ca_City)
+
+                @Html.EditorFor(model => model.ca_City, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ca_City, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="col-md-4 mb-2">
+                @Html.LabelFor(model => model.ca_State)
+
+                @Html.EditorFor(model => model.ca_State, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ca_State, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="col-md-4 mb-2">
+                @Html.LabelFor(model => model.ca_Pin)
+
+                @Html.EditorFor(model => model.ca_Pin, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ca_Pin, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                @Html.LabelFor(model => model.ca_Contact_Number)
+
+                @Html.EditorFor(model => model.ca_Contact_Number, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ca_Contact_Number, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+                @Html.LabelFor(model => model.ca_Email)
+
+                @Html.EditorFor(model => model.ca_Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ca_Email, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                @Html.LabelFor(model => model.ca_Education)
+
+                @Html.EditorFor(model => model.ca_Education, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ca_Education, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+                @Html.LabelFor(model => model.ca_Resume)
+
+                @Html.EditorFor(model => model.ca_Resume, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ca_Resume, "", new { @class = "text-danger" })
+
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="col-md-6 mb-3">
+                @Html.LabelFor(model => model.ca_Experience)
+
+                @Html.EditorFor(model => model.ca_Experience, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ca_Experience, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+                @Html.LabelFor(model => model.ca_Company)
+
+                @Html.EditorFor(model => model.ca_Company, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ca_Company, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ca_Password)
+
+            @Html.EditorFor(model => model.ca_Password, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ca_Password, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ca_Datetime)
+
+            @Html.EditorFor(model => model.ca_Datetime, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ca_Datetime, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="form-group">
+            <div>
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
